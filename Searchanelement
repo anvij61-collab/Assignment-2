@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Searchanelement {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int size = sc.nextInt();
+        int[] numbers = new int[size];
+
+        for(int i=0; i< size; i++){
+            numbers[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter the element to search: ");
+        int searchElement = sc.nextInt();
+
+        boolean found = false;
+        for(int i=0; i<size; i++){
+            if(numbers[i] == searchElement){
+                found = true;
+                break;
+            }
+        }
+
+        if(found){
+            System.out.println(searchElement + " is present in the array.");
+        } else {
+            System.out.println(searchElement + " is not present in the array.");
+        }
+    }
+}
