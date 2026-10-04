@@ -1,0 +1,30 @@
+import java.util.*;
+public class q14matrixDiagonalAnalysis {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter no. of rows");
+        int rows = sc.nextInt();
+
+        System.out.print("Enter no. of cols");
+        int cols = sc.nextInt();
+
+        int[][] arr = new int[rows][cols];
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<cols; j++){
+                arr[i][j]= sc.nextInt();
+            }
+        }
+            int n = arr.length;
+            int mainDiagonal= 0;
+            int secondDiagonal =0;
+            for(int k=0 ; k<n; k++){
+                mainDiagonal += arr[k][k];
+                secondDiagonal += arr[k][n-1-k];
+            }
+            System.out.println("Sum of mainDiagonal:" + mainDiagonal);
+            System.out.println("Sum of SecondDiagonal:" + secondDiagonal);
+            int difference = (mainDiagonal - secondDiagonal);
+            System.out.println("Difference:" + difference);
+        
+    }
+}
