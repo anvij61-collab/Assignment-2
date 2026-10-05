@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class q17Studentperformanceanalysis {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter no. of students: ");
+        int size = sc.nextInt();
+
+        int[] arr = new int[size];
+
+        int sum = 0;
+
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+
+        double average = (double) sum / size;
+
+        int highestmark = arr[0];
+        int lowestmark = arr[0];
+        int passed = 0;
+        int failed = 0;
+        int aboveAverage = 0;
+
+        for (int i = 0; i < size; i++) {
+
+            if (arr[i] > highestmark) {
+                highestmark = arr[i];
+            }
+
+            if (arr[i] < lowestmark) {
+                lowestmark = arr[i];
+            }
+
+            if (arr[i] >= 40) {
+                passed++;
+            }
+
+            if (arr[i] < 40) {
+                failed++;
+            }
+
+            if (arr[i] > average) {
+                aboveAverage++;
+            }
+        }
+
+        // Final output
+        System.out.println("Average: " + average);
+        System.out.println("Highest: " + highestmark);
+        System.out.println("Lowest: " + lowestmark);
+        System.out.println("Passed: " + passed);
+        System.out.println("Failed: " + failed);
+        System.out.println("Above Average: " + aboveAverage);
+
+        sc.close();
+    }
+}
