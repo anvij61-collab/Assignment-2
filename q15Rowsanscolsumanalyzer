@@ -16,13 +16,19 @@ public class q15Rowsanscolsumanalyzer {
             }
         }
         
+        int highestSales =0;
+        int highestbranch=0;
         for(int i=0; i<rows; i++){
             int rowsum =0;
 
             for(int j=0; j<cols; j++){
             rowsum += arr[i][j];
         }
-        System.out.println("Sum of row " + i + ": " + rowsum);
+        System.out.println("Sum of row " + (i+1) + ": " + rowsum);
+        if(rowsum> highestSales){
+            highestSales += rowsum;
+            highestbranch =i+1;
+        }
         }
 
         for(int j=0; j<cols; j++){
@@ -31,8 +37,11 @@ public class q15Rowsanscolsumanalyzer {
             for(int i=0; i<rows; i++){
             colsum += arr[i][j];
         }
-        System.out.println("Sum of col " + j + ": " + colsum);
+        System.out.println("Sum of col " + (j+1) + ": " + colsum);
         }
-        
+
+
+        System.out.println("Highest sales branch: " + highestbranch);
+        System.out.println("Highest Sales: "+ highestSales);
     }
 }
