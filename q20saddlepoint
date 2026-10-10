@@ -1,0 +1,43 @@
+import java.util.*;
+public class q20saddlepoint {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter row and cols");
+        int R = sc.nextInt();
+        int C = sc.nextInt();
+
+        int[][] arr = new int[R][C];
+        for(int i=0; i<R ; i++){
+            for(int j=0 ; j<C ; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        boolean found =false;
+        for(int i=0; i<R; i++){
+            for(int j=0; j<C; j++){
+                int rowmin= arr[i][0];
+                for(int k=0; k<C ; k++){
+                    if(rowmin > arr[i][k]){
+                        rowmin = arr[i][k];
+                    }
+                }
+
+                int colMax= arr[0][j];
+                for(int k=0; k<R ; k++){
+                    if(colMax < arr[k][j]){
+                        colMax = arr[k][j];
+                    }
+                }
+
+                if(arr[i][j] ==rowmin && arr[i][j] ==colMax){
+                    System.out.println("Saddle point: " + arr[i][j] + " at  row " + (i+1) + " col " + (j+1));
+                     found =true;
+                }  
+            }
+        }
+
+        if(!found){
+            System.out.println("No saddle point");
+        }
+    } 
+}
