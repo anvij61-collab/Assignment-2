@@ -1,0 +1,88 @@
+import java.util.*;
+public class import java.util.*;
+public class q19spiralmatrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter no. of row and col: ");
+        int R = sc.nextInt();
+        int C = sc.nextInt();
+
+        int[][] arr = new int[R][C];
+
+        for(int i=0; i<R; i++){
+            for(int j =0; j<C; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+            int top =0, bottom = R-1, left =0, right=C-1;
+
+            for(int j=left; j<=right; j++){
+                System.out.print(arr[top][j]);
+        }
+            top++;
+
+            for(int i =top; i<=bottom; i++){
+                System.out.print(arr[i][right]);
+            }
+            right--;
+
+            while(top<= bottom){
+                for(int j=right; j>=left; j--){
+                System.out.print(arr[bottom][j]);
+            }
+            bottom--;
+            }
+
+            while(left<= right){
+                for(int i=bottom; i>=top; i--){
+                System.out.print(arr[i][left]);
+            }
+            left++;
+            
+        }
+        
+    }
+}
+ {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter no. of row and col: ");
+        int R = sc.nextInt();
+        int C = sc.nextInt();
+
+        int[][] arr = new int[R][C];
+
+        for(int i=0; i<R; i++){
+            for(int j =0; j<C; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+            int top =0, bottom = R-1, left =0, right=C-1;
+
+            for(int j=left; j<=right; j++){
+                System.out.print(arr[top][j]);
+        }
+            top++;
+
+            for(int i =top; i<=bottom; i++){
+                System.out.print(arr[i][right]);
+            }
+            right--;
+
+            while(top<= bottom){
+                for(int j=right; j>=left; j--){
+                System.out.print(arr[bottom][j]);
+            }
+            bottom--;
+            }
+
+            while(left<= right){
+                for(int i=bottom; i>=top; i--){
+                System.out.print(arr[i][left]);
+            }
+            left++;
+            
+        }
+        
+    }
+}
